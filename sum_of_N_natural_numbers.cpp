@@ -1,22 +1,39 @@
 #include <iostream>
 using namespace std;
 
-int sumNatural(int num) {
+void forLoop() {
+  int num;
+  cout << "Enter the number: ";
+  cin >> num;
   int sum = 0;
   for (int i = 1; i <= num; i++) {
     sum += i;
   }
-  return sum;
+  cout << "Sum = " << sum;
+}
+
+void formula() {
+  int num;
+  cout << "Enter the number: ";
+  cin >> num;
+  int sum = (num * (num + 1) / 2);
+  cout << "Sum = " << sum;
+}
+
+int recursion(int n) {
+  if (n == 0) {
+    return n;
+  } else {
+    return n + recursion(n - 1);
+  }
 }
 
 int main() {
   int n;
   cout << "Enter the number: ";
   cin >> n;
-
-  if (n < 0 || n == 0) {
-    cout << "provide correct input!";
-  } else {
-    cout << "Sum of " << n << " Natural Numbers is = " << sumNatural(n);
-  }
+  int sum = recursion(n);
+  cout << "Sum = " << sum << endl;
+  // forLoop();
+  // formula();
 }
